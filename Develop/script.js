@@ -20,6 +20,15 @@ var shuffle = function(array){
   return array;
 }
 
+//creating final array 
+/*var finalPW = function(array){
+  for(var i = 0; i < array.length && array.length < passwordLength; i++ ){
+    var temp = [i];
+    
+  }
+  return temp;
+}*/
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -62,32 +71,38 @@ var generatePassword = function() {
   };
 
   //generate password based on criteria
-  if(criteriaUpper && emptyPassword.length < passwordLength){
-    let tempArray = shuffle(upperCaseArray);
-    emptyPassword.push(...tempArray);
+  if(criteriaUpper){
+    emptyPassword.push(...upperCaseArray);
     console.log(emptyPassword);
   }
-  console.log(emptyPassword);
-  if(criteriaLower && emptyPassword.length < passwordLength){
-    let tempArray = shuffle(lowerCaseArray);
-    emptyPassword.push(...tempArray);
+  if(criteriaLower){
+    emptyPassword.push(...lowerCaseArray);
     console.log(emptyPassword);
   }
-  if(criteriaNumber && emptyPassword.length < passwordLength){
-    let tempArray = shuffle(numberArray);
-    emptyPassword.push(...tempArray);
+  if(criteriaNumber){
+    emptyPassword.push(...numberArray);
     console.log(emptyPassword)
   }
-  if(criteriaSpecialCharacters && emptyPassword.length < passwordLength){
-    let tempArray = shuffle(charArray);
-    emptyPassword.push(...tempArray);
+  if(criteriaSpecialCharacters){
+    emptyPassword.push(...charArray);
     console.log(emptyPassword);
   }
-
-  console.log(emptyPassword);
 
   //shuffle the selected criteria 
   shuffle(emptyPassword);
+  console.log(emptyPassword);
+
+  //creating final array according to length 
+var finalPW = function(array){
+  for(var i = 0; i < array.length && array.length < passwordLength; i++ ){
+    var temp = [i];
+    
+  }
+  //return temp;
+}
+
+finalPW(emptyPassword);
+console.log(emptyPassword);
 
 //display password on page and remove "," 
   return emptyPassword.join("");
