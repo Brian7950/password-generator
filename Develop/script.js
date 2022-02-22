@@ -25,11 +25,7 @@ var shuffle = function(array){
 var generateBtn = document.querySelector("#generate");
  
 var generatePassword = function() {
-  console.log("Hey you clicked me!");
 
-  //1.prompt user for password criteria
-  //  a. password length
-  //  b. lowercase, uppercase, numbers, special characters
   var passwordLength = window.prompt("Choose length of password");
   console.log("logging password length " + passwordLength);
 
@@ -68,36 +64,33 @@ var generatePassword = function() {
   //generate password based on criteria
   if(criteriaUpper && emptyPassword.length < passwordLength){
     let tempArray = shuffle(upperCaseArray);
-    emptyPassword.push(tempArray);
+    emptyPassword.push(...tempArray);
     console.log(emptyPassword);
   }
   console.log(emptyPassword);
   if(criteriaLower && emptyPassword.length < passwordLength){
     let tempArray = shuffle(lowerCaseArray);
-    emptyPassword.push(tempArray);
+    emptyPassword.push(...tempArray);
     console.log(emptyPassword);
   }
   if(criteriaNumber && emptyPassword.length < passwordLength){
     let tempArray = shuffle(numberArray);
-    emptyPassword.push(tempArray);
+    emptyPassword.push(...tempArray);
     console.log(emptyPassword)
   }
   if(criteriaSpecialCharacters && emptyPassword.length < passwordLength){
     let tempArray = shuffle(charArray);
-    emptyPassword.push(tempArray);
+    emptyPassword.push(...tempArray);
     console.log(emptyPassword);
   }
 
+  console.log(emptyPassword);
 
+  //shuffle the selected criteria 
+  shuffle(emptyPassword);
 
-
-
-
-  //4.display password on page 
-
-
-
-  return "generated password will go here";
+//display password on page and remove "," 
+  return emptyPassword.join("");
 
 }
 
