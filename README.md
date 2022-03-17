@@ -16,3 +16,4 @@
 ## Deployed Site 
 ### https://brian7950.github.io/password-generator/
 
+![password_Gen](https://user-images.githubusercontent.com/97642221/158726733-67a804de-b6d5-48bf-b568-ca7c800bd9e4.JPG)
